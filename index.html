@@ -1,229 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empório Frios</title>
-    
-    <meta property="og:title" content="Empório Frios">
-    <meta property="og:description" content="Peça suas bebidas e copões. Delivery + Retirada. Horário: 08h às 00h">
-    <meta property="og:image" content="https://kael-sites.github.io/emporio-frios/banner.jpg">
-    <meta property="og:url" content="https://kael-sites.github.io/emporio-frios/">
-    <meta property="og:type" content="website">
-
+    <title>Kael | Sites Profissionais a partir de R$150</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body { background-color: #000; color: #fff; font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; overflow-x: hidden; }
-        .bolha { position: fixed; bottom: -100px; background: rgba(255, 255, 255, 0.08); border-radius: 50%; animation: subir 20s infinite linear; z-index: -1; }
-        @keyframes subir { 0% { transform: translateY(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-120vh); opacity: 0; } }
-        .banner img { width: 100%; max-width: 800px; display: block; margin: 0 auto; position: relative; z-index: 2; }
-        #status-loja { padding: 12px; font-weight: bold; font-size: 18px; letter-spacing: 1px; position: relative; z-index: 2; }
-        .aberto { background-color: #25D366; color: #000; }
-        .fechado { background-color: #ff3333; color: #fff; }
-        .container { padding: 15px; max-width: 700px; margin: auto; position: relative; z-index: 2; }
-        h3 { color: #fff; font-size: 22px; border-bottom: 2px solid #fff; padding-bottom: 8px; margin-top: 30px; text-transform: uppercase; letter-spacing: 1px; }
-        .item { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #333; }
-        .nome { text-align: left; flex: 1; font-size: 16px; }
-        .preco { color: #fff; font-weight: bold; margin: 0 10px; font-size: 16px; }
-        .qtd-box { display: flex; align-items: center; }
-        .qtd { width: 45px; height: 35px; background: #222; color: #fff; border: 1px solid #fff; text-align: center; border-radius: 8px; margin: 0 5px; font-size: 16px; }
-        .btn-qtd { background: #fff; color: #000; border: none; width: 35px; height: 35px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 20px; }
-        #carrinho { background: #111; padding: 20px; margin-top: 30px; border-radius: 15px; border: 2px solid #fff; }
-        #lista-carrinho { list-style: none; padding: 0; text-align: left; }
-        #lista-carrinho li { display: flex; justify-content: space-between; margin: 10px 0; font-size: 15px; }
-        #total { font-size: 26px; color: #fff; font-weight: bold; margin: 20px 0; }
-        .form-box { text-align: left; margin: 20px 0; }
-        .form-box label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-box input, .form-box select { width: 95%; padding: 12px; margin-bottom: 15px; background: #222; color: #fff; border: 1px solid #555; border-radius: 8px; font-size: 16px; }
-        .opcoes-entrega { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
-        .opcoes-entrega label { display: flex; align-items: center; padding: 12px; background: #222; border-radius: 8px; cursor: pointer; border: 1px solid #444; }
-        .opcoes-entrega input { margin-right: 12px; width: 18px; height: 18px; }
-        .botoes { display: flex; gap: 10px; margin-top: 20px; }
-        .whatsapp { flex: 2; display: block; background-color: #25D366; color: #fff; padding: 16px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 18px; text-align: center; }
-        .btn-limpar { flex: 1; background-color: #444; color: #fff; border: none; padding: 16px; border-radius: 10px; font-weight: bold; font-size: 18px; cursor: pointer; }
-        footer { margin-top: 40px; padding: 20px; font-size: 14px; color: #aaa; }
+        body { 
+            margin: 0; 
+            background: #000; 
+            color: white; 
+            font-family: Arial, sans-serif; 
+            text-align: center;
+        }
+        .banner { 
+            background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072') center/cover; 
+            height: 250px; 
+            width: 100%;
+        }
+        .conteudo { 
+            padding: 30px 20px;
+        }
+        h1 { 
+            font-size: 32px; 
+            margin: 10px 0;
+            color: #ff3300;
+        }
+        p { 
+            font-size: 16px; 
+            line-height: 1.6; 
+            margin-bottom: 25px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .botao { 
+            background: #ff3300; 
+            color: white; 
+            padding: 15px; 
+            margin: 10px auto; 
+            border-radius: 10px; 
+            text-decoration: none; 
+            display: block; 
+            font-weight: bold; 
+            font-size: 18px;
+            max-width: 300px;
+            transition: 0.3s;
+        }
+        .botao:hover { 
+            background: white; 
+            color: black;
+            transform: scale(1.05);
+        }
+        .preco-box {
+            background: #111;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px auto;
+            max-width: 400px;
+            border: 2px solid #ff3300;
+        }
+        .preco {
+            font-size: 48px;
+            color: #ff3300;
+            font-weight: bold;
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
-
-    <div id="status-loja">Verificando...</div>
-    <div class="banner"><img src="./banner.jpg" alt="Empório Frios"></div>
-
-    <div class="container">
-        <h3>Bebidas</h3>
-        <div class="item"><span class="nome">Red Label</span><span class="preco">R$ 110,00</span><div class="qtd-box"><button class="btn-qtd btn-menos">-</button><input type="number" value="0" min="0" class="qtd" data-nome="Red Label" data-preco="110"><button class="btn-qtd btn-mais">+</button></div></div>
-        <div class="item"><span class="nome">Jack Daniels</span><span class="preco">R$ 175,00</span><div class="qtd-box"><button class="btn-qtd btn-menos">-</button><input type="number" value="0" min="0" class="qtd" data-nome="Jack Daniels" data-preco="175"><button class="btn-qtd btn-mais">+</button></div></div>
-        <div class="item"><span class="nome">Gin QN</span><span class="preco">R$ 30,00</span><div class="qtd-box"><button class="btn-qtd btn-menos">-</button><input type="number" value="0" min="0" class="qtd" data-nome="Gin QN" data-preco="30"><button class="btn-qtd btn-mais">+</button></div></div>
-        <div class="item"><span class="nome">Busca Brisa</span><span class="preco">R$ 75,00</span><div class="qtd-box"><button class="btn-qtd btn-menos">-</button><input type="number" value="0" min="0" class="qtd" data-nome="Busca Brisa" data-preco="75"><button class="btn-qtd btn-mais">+</button></div></div>
-        <div class="item"><span class="nome">Jack James</span><span class="preco">R$ 60,00</span><div class="qtd-box"><button class="btn-qtd btn-menos">-</button><input type="number" value="0" min="0" class="qtd" data-nome="Jack James" data-preco="60"><button class="btn-qtd btn-mais">+</button></div></div>
-
-        <h3>Copões</h3>
-        <div class="item"><span class="nome">Copão Gin QN</span><span class="preco">R$ 15,00</span><div class="qtd-box"><button class="btn-qtd btn-menos">-</button><input type="number" value="0" min="0" class="qtd" data-nome="Copão Gin QN" data-preco="15"><button class="btn-qtd btn-mais">+</button></div></div>
-        <div class="item"><span class="nome">Copão Busca Brisa</span><span class="preco">R$ 18,00</span><div class="qtd-box"><button class="btn-qtd btn-menos">-</button><input type="number" value="0" min="0" class="qtd" data-nome="Copão Busca Brisa" data-preco="18"><button class="btn-qtd btn-mais">+</button></div></div>
-        <div class="item"><span class="nome">Copão Bob Pinga</span><span class="preco">R$ 18,00</span><div class="qtd-box"><button class="btn-qtd btn-menos">-</button><input type="number" value="0" min="0" class="qtd" data-nome="Copão Bob Pinga" data-preco="18"><button class="btn-qtd btn-mais">+</button></div></div>
-        <div class="item"><span class="nome">Copão Red Label</span><span class="preco">R$ 20,00</span><div class="qtd-box"><button class="btn-qtd btn-menos">-</button><input type="number" value="0" min="0" class="qtd" data-nome="Copão Red Label" data-preco="20"><button class="btn-qtd btn-mais">+</button></div></div>
-
-        <div id="carrinho">
-            <h3>🛒 Seu Pedido</h3>
-            <ul id="lista-carrinho"><li>Seu carrinho está vazio</li></ul>
-            
-            <div class="form-box">
-                <label>Seu Nome:</label>
-                <input type="text" id="nome-cliente" placeholder="Digite seu nome">
-                <label>Endereço:</label>
-                <input type="text" id="endereco-cliente" placeholder="Rua, Bairro, Nº - Só se for entrega">
-                <label>Forma de Pagamento:</label>
-                <select id="pagamento">
-                    <option value="Pix">Pix</option>
-                    <option value="Cartão">Cartão</option>
-                    <option value="Dinheiro">Dinheiro</option>
-                </select>
-                <label>Forma de Entrega:</label>
-                <div class="opcoes-entrega">
-                    <label><input type="radio" name="entrega" value="retirada" checked> Retirada no Local</label>
-                    <label><input type="radio" name="entrega" value="delivery"> Taxa de Entrega + R$ 3,00</label>
-                </div>
-            </div>
-
-            <div id="total">Total: R$ 0,00</div>
-            
-            <div class="botoes">
-                <button class="btn-limpar" onclick="limparCarrinho()">Limpar</button>
-                <a id="btn-whatsapp" class="whatsapp" href="#" target="_blank">Enviar Pedido</a>
-            </div>
-        </div>
-        <footer>Empório Frios © 2026<br>Horário: 08h às 00h | Ter a Dom</footer>
-    </div>
-
-<script>
-    for(let i = 0; i < 20; i++){
-        let bolha = document.createElement('div');
-        bolha.className = 'bolha';
-        bolha.style.width = Math.random() * 25 + 10 + 'px';
-        bolha.style.height = bolha.style.width;
-        bolha.style.left = Math.random() * 100 + 'vw';
-        bolha.style.animationDelay = Math.random() * 20 + 's';
-        bolha.style.animationDuration = Math.random() * 10 + 15 + 's';
-        document.body.appendChild(bolha);
-    }
-
-    function verificarStatusLoja(){
-        const statusEl = document.getElementById('status-loja');
-        const agora = new Date();
-        const hora = agora.getHours();
-        const diaSemana = agora.getDay();
-        const aberto = (diaSemana >= 2 || diaSemana === 0) && (hora >= 8 && hora < 24);
-        if(aberto){
-            statusEl.innerText = '🟢 ABERTO AGORA - 08h às 00h';
-            statusEl.className = 'aberto';
-        } else {
-            statusEl.innerText = '🔴 FECHADO - Horário: 08h às 00h';
-            statusEl.className = 'fechado';
-        }
-    }
-    verificarStatusLoja();
-
-    const carrinho = [];
-    const taxaEntrega = 3.00;
-    let linkLocalizacao = ''; // guarda a localização
-
-    function atualizarCarrinho(){
-        const listaCarrinho = document.getElementById('lista-carrinho');
-        const totalEl = document.getElementById('total');
-        const btnWhats = document.getElementById('btn-whatsapp');
-        listaCarrinho.innerHTML = '';
-        let total = 0;
-        let mensagemWhats = 'Olá! Quero fazer o pedido:%0A%0A';
-        let temItem = false;
-        let tipoEntrega = document.querySelector('input[name="entrega"]:checked').value;
-
-        carrinho.forEach(item => {
-            if(item.qtd > 0){
-                temItem = true;
-                const subtotal = item.preco * item.qtd;
-                total += subtotal;
-                listaCarrinho.innerHTML += `<li>${item.qtd}x ${item.nome} <span>R$ ${subtotal.toFixed(2)}</span></li>`;
-                mensagemWhats += `${item.qtd}x ${item.nome} - R$ ${subtotal.toFixed(2)}%0A`;
-            }
-        });
-
-        if(tipoEntrega === 'delivery' && total > 0){
-            total += taxaEntrega;
-            listaCarrinho.innerHTML += `<li>Taxa de Entrega <span>R$ ${taxaEntrega.toFixed(2)}</span></li>`;
-            mensagemWhats += `Taxa de Entrega - R$ ${taxaEntrega.toFixed(2)}%0A`;
-        }
-
-        if(!temItem) listaCarrinho.innerHTML = '<li>Seu carrinho está vazio</li>';
-        totalEl.innerText = `Total: R$ ${total.toFixed(2)}`;
-        
-        const nome = document.getElementById('nome-cliente').value;
-        const endereco = document.getElementById('endereco-cliente').value;
-        const pagamento = document.getElementById('pagamento').value;
-
-        mensagemWhats += `%0A*DADOS DO CLIENTE*%0A`;
-        mensagemWhats += `Nome: ${nome || 'Não informado'}%0A`;
-        if(tipoEntrega === 'delivery') mensagemWhats += `Endereço: ${endereco || 'Não informado'}%0A`;
-        mensagemWhats += `Pagamento: ${pagamento}%0A`;
-        mensagemWhats += `Entrega: ${tipoEntrega === 'delivery' ? 'Entrega' : 'Retirada no Local'}%0A`;
-        if(linkLocalizacao) mensagemWhats += `*Localização:* ${linkLocalizacao}%0A`;
-        mensagemWhats += `%0A*TOTAL: R$ ${total.toFixed(2)}*`;
-
-        btnWhats.href = `https://wa.me/5517991927552?text=${mensagemWhats}`;
-    }
-
-    function pedirLocalizacao(){
-        if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(
-                (pos) => {
-                    linkLocalizacao = `https://maps.google.com/?q=${pos.coords.latitude},${pos.coords.longitude}`;
-                    atualizarCarrinho(); // atualiza o link com a localização
-                },
-                () => { linkLocalizacao = ''; atualizarCarrinho(); } // se negar, continua sem
-            );
-        }
-    }
-
-    function limparCarrinho(){
-        carrinho.forEach(item => item.qtd = 0);
-        document.querySelectorAll('.qtd').forEach(input => input.value = 0);
-        document.getElementById('nome-cliente').value = '';
-        document.getElementById('endereco-cliente').value = '';
-        linkLocalizacao = '';
-        atualizarCarrinho();
-    }
-
-    document.querySelectorAll('.item').forEach(item => {
-        const btnMais = item.querySelector('.btn-mais');
-        const btnMenos = item.querySelector('.btn-menos');
-        const inputQtd = item.querySelector('.qtd');
-        const nome = inputQtd.dataset.nome;
-        const preco = parseFloat(inputQtd.dataset.preco);
-        carrinho.push({nome, preco, qtd: 0});
-
-        btnMais.addEventListener('click', () => {
-            inputQtd.value = parseInt(inputQtd.value) + 1;
-            carrinho.find(p => p.nome === nome).qtd = parseInt(inputQtd.value);
-            atualizarCarrinho();
-        });
-        btnMenos.addEventListener('click', () => {
-            if(parseInt(inputQtd.value) > 0){
-                inputQtd.value = parseInt(inputQtd.value) - 1;
-                carrinho.find(p => p.nome === nome).qtd = parseInt(inputQtd.value);
-                atualizarCarrinho();
-            }
-        });
-    });
+    <div class="banner"></div>
     
-    document.querySelectorAll('input, select').forEach(el => {
-        el.addEventListener('change', (e) => {
-            if(e.target.name === 'entrega' && e.target.value === 'delivery'){
-                pedirLocalizacao(); // pede localização só quando marca entrega
-            }
-            atualizarCarrinho();
-        });
-    });
+    <div class="conteudo">
+        <h1>KAEL</h1>
+        
+        <p>Crio sites profissionais que vendem por você 🚀<br>
+        Seu negócio online do zero em 24h. Rápido, bonito e barato.<br>
+        Chama no WhatsApp e bora tirar sua ideia do papel!</p>
+        
+        <a class="botao" href="https://wa.me/5586995223346">💬 QUERO MEU SITE AGORA</a>
+        
+        <a class="botao" href="https://instagram.com/kaelslv_wr">📸 VER MEU PORTFÓLIO</a>
 
-    atualizarCarrinho();
-</script>
-
+        <div class="preco-box">
+            <h2>PACOTE IMPULSO</h2>
+            <div class="preco">R$150</div>
+            <p>✓ Site de 1 página profissional<br>
+            ✓ Pronto em 24h<br>
+            ✓ Botão WhatsApp + Instagram<br>
+            ✓ Banner + Design moderno<br>
+            ✓ Domínio .com.br grátis 1 ano</p>
+            <p style="font-size:12px; color:#aaa;">Ideal pra começar do zero</p>
+        </div>
+    </div>
 </body>
 </html>
